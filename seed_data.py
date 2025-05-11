@@ -5,8 +5,11 @@ All data is lowercase for consistency.
 
 from datetime import date
 from sqlalchemy.orm import Session
-from database import SessionLocal
+from database import SessionLocal, engine, Base
 import models
+
+# Create database tables at startup if they don't exist
+Base.metadata.create_all(bind=engine)
 
 def seed_database():
     db: Session = SessionLocal()
