@@ -1,6 +1,6 @@
 """
-This file defines the main FastAPI app and routes.
-It acts as the 'controller' layer, handling requests and responses.
+This file is for backend testing, and defines the main FastAPI app and routes.
+It acts as the 'controller' layer, handling requests and responses for testing.
 """
 
 from fastapi import FastAPI, Depends, HTTPException, Query

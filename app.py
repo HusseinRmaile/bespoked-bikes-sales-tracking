@@ -1,12 +1,18 @@
+"""
+This file defines the main FastAPI app and routes.
+It acts as the 'controller' layer, handling requests and responses.
+"""
+
 from fastapi import FastAPI, Request, Form, Depends, HTTPException
 from fastapi.responses import RedirectResponse
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
 from sqlalchemy.orm import Session
-import uvicorn
-
-from database import SessionLocal
+from database import SessionLocal, engine, Base
 import models, crud, schemas
+
+# initializes db on startup if not done already
+Base.metadata.create_all(bind=engine)
 
 app = FastAPI(title="BeSpoked Bikes Client App")
 
