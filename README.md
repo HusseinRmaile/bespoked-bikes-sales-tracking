@@ -44,7 +44,7 @@ Setup Instructions:
 
 1. Clone the repo:
    ```
-   git clone [https://github.com/HusseinRmaile/bespoked-bikes-sales-tracking.git](https://github.com/HusseinRmaile/bespoked-bikes-sales-tracking.git)
+   git clone https://github.com/HusseinRmaile/bespoked-bikes-sales-tracking.git
    cd bespoked-bikes-sales-tracking
    ```
 2. Install dependencies:
@@ -61,7 +61,7 @@ Setup Instructions:
    ```
 5. Access client:
    ```
-   [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
+   http://127.0.0.1:8000/
    ```
 For Backend API Testing:
 
@@ -71,7 +71,7 @@ For Backend API Testing:
    ```
 2. Access Swagger API docs:
    ```
-   [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
+   http://127.0.0.1:8000/docs
    ```
 Additional Notes:
 
