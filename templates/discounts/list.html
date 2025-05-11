@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Discounts</h2>
+<a href="/discounts/create/" class="btn">Create New Discount</a>
+<hr>
+<table border="1" cellpadding="5">
+    <tr>
+        <th>ID</th>
+        <th>Product</th>
+        <th>Begin Date</th>
+        <th>End Date</th>
+        <th>Discount %</th>
+        <th>Actions</th>
+    </tr>
+    {% for discount in discounts %}
+    <tr>
+        <td>{{ discount.id }}</td>
+        <td>{{ discount.product.name }}</td>
+        <td>{{ discount.begin_date }}</td>
+        <td>{{ discount.end_date }}</td>
+        <td>{{ discount.discount_percentage }}</td>
+        <td>
+            <a href="/discounts/{{ discount.id }}/edit/" class="btn">Edit</a>
+            <form action="/discounts/{{ discount.id }}/delete/" method="post" style="display:inline;">
+                <button type="submit">Delete</button>
+            </form>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BeSpoked Bikes</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>BeSpoked Bikes Client App</h1>
+    <nav>
+        <a href="/">Home</a> |
+        <a href="/products/">Products</a> |
+        <a href="/salespersons/">Salespersons</a> |
+        <a href="/customers/">Customers</a> |
+        <a href="/sales/">Sales</a> |
+        <a href="/discounts/">Discounts</a> |
+        <a href="/commission_report/">Commission Report</a>
+    </nav>
+    <hr>
+
+    <div class="page-content">
+        {% block content %}{% endblock %}
+    </div>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        document.querySelectorAll("form").forEach(form => {
+            form.addEventListener("submit", function(e) {
+                let invalid = false;
+                form.querySelectorAll("input[required]").forEach(input => {
+                    if (!input.value.trim()) {
+                        invalid = true;
+                    }
+                });
+                if (invalid) {
+                    e.preventDefault();
+                    alert("Please fill in all required fields.");
+                }
+            });
+        });
+    });
+    </script>
+</body>
+</html>

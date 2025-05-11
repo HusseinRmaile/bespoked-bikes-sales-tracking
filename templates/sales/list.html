@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Sales</h2>
+<a href="/sales/create/" class="btn">Create New Sale</a>
+<hr>
+<table border="1" cellpadding="5">
+    <tr>
+        <th>ID</th>
+        <th>Product</th>
+        <th>Salesperson</th>
+        <th>Customer</th>
+        <th>Sales Date</th>
+        <th>Actions</th>
+    </tr>
+    {% for sale in sales %}
+    <tr>
+        <td>{{ sale.id }}</td>
+        <td>{{ sale.product.name }}</td>
+        <td>{{ sale.salesperson.first_name }} {{ sale.salesperson.last_name }}</td>
+        <td>{{ sale.customer.first_name }} {{ sale.customer.last_name }}</td>
+        <td>{{ sale.sales_date }}</td>
+        <td>
+            <!-- There is edit functionality support in the backend, but I realized it would make the incrementing
+             and decrementing of prodcut quantities a bit strange as you could edit the product, so you would have
+             to check that each time, and also I feel like in the real world, you wouldn't edit sales anyway. So
+             I'm going to leave the code since I already implemented it, but in hindsight maybe I shouldn't have.
+             <a href="/sales/{{ sale.id }}/edit/" class="btn">Edit</a>
+             -->
+            <form action="/sales/{{ sale.id }}/delete/" method="post" style="display:inline;">
+                <button type="submit">Delete</button>
+            </form>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

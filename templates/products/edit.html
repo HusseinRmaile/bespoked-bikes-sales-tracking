@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Edit Product</h2>
+<form method="post">
+    Name: <input type="text" name="name" value="{{ product.name }}" required><br>
+    Manufacturer: <input type="text" name="manufacturer" value="{{ product.manufacturer }}" required><br>
+    Style: <input type="text" name="style" value="{{ product.style }}" required><br>
+    Purchase Price: <input type="number" step="0.01" name="purchase_price" value="{{ product.purchase_price }}" required><br>
+    Sale Price: <input type="number" step="0.01" name="sale_price" value="{{ product.sale_price }}" required><br>
+    Quantity On Hand: <input type="number" step="1" name="qty_on_hand" value="{{ product.qty_on_hand }}" required><br>
+    Commission %: <input type="number" step="0.01" name="commission_percentage" value="{{ product.commission_percentage }}" required><br>
+    <button type="submit">Update</button>
+</form>
+{% endblock %}

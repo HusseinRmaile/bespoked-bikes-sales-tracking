@@ -1,0 +1,109 @@
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f8fc;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Page header */
+h1, h2, h3 {
+    color: #205081;
+}
+
+/* Navbar */
+nav {
+    background-color: #e0ecf8;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+nav a {
+    color: #205081;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Tables */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+th, td {
+    border: 1px solid #c7d9eb;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #205081;
+    color: white;
+}
+
+/* Forms */
+form {
+    margin-top: 20px;
+}
+
+input, select, button {
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+input:focus, select:focus {
+    border-color: #205081;
+    outline: none;
+}
+
+/* Buttons */
+button {
+    display: inline-block;
+    background-color: #205081;
+    color: white;
+    padding: 8px 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 15px;
+    margin-right: 5px;
+}
+
+button:hover {
+    background-color: #1a406a;
+}
+
+/* Center main content slightly */
+body > * {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Make <a class="btn"> match other buttons */
+a.btn {
+    display: inline-block;
+    background-color: #205081;
+    color: white;
+    padding: 8px 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 15px;
+    margin-right: 5px;
+}
+
+a.btn:hover {
+    background-color: #1a406a;
+}

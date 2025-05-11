@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Customers</h2>
+<a href="/customers/create/" class="btn">Create New Customer</a>
+<hr>
+<table border="1" cellpadding="5">
+    <tr>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Address</th>
+        <th>Phone</th>
+        <th>Start Date</th>
+        <th>Actions</th>
+    </tr>
+    {% for customer in customers %}
+    <tr>
+        <td>{{ customer.id }}</td>
+        <td>{{ customer.first_name }}</td>
+        <td>{{ customer.last_name }}</td>
+        <td>{{ customer.address }}</td>
+        <td>{{ customer.phone }}</td>
+        <td>{{ customer.start_date }}</td>
+        <td>
+            <a href="/customers/{{ customer.id }}/edit/" class="btn">Edit</a>
+            <form action="/customers/{{ customer.id }}/delete/" method="post" style="display:inline;">
+                <button type="submit">Delete</button>
+            </form>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

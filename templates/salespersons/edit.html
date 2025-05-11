@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Edit Salesperson</h2>
+<form method="post">
+    First Name: <input type="text" name="first_name" value="{{ sp.first_name }}" required><br>
+    Last Name: <input type="text" name="last_name" value="{{ sp.last_name }}" required><br>
+    Address: <input type="text" name="address" value="{{ sp.address }}" required><br>
+    Phone: <input type="text" name="phone" value="{{ sp.phone }}" required><br>
+    Start Date: <input type="date" name="start_date" value="{{ sp.start_date }}" required><br>
+    Termination Date (optional): <input type="date" name="termination_date" value="{{ sp.termination_date }}"><br>
+    Manager: <input type="text" name="manager" value="{{ sp.manager }}" required><br>
+    <button type="submit">Update</button>
+</form>
+{% endblock %}

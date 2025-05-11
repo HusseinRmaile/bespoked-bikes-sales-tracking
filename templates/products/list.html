@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Products</h2>
+<a href="/products/create/" class="btn">Create New Product</a>
+<hr>
+<table border="1" cellpadding="5">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Manufacturer</th>
+        <th>Style</th>
+        <th>Purchase Price</th>
+        <th>Sale Price</th>
+        <th>Qty</th>
+        <th>Commission %</th>
+        <th>Actions</th>
+    </tr>
+    {% for product in products %}
+    <tr>
+        <td>{{ product.id }}</td>
+        <td>{{ product.name }}</td>
+        <td>{{ product.manufacturer }}</td>
+        <td>{{ product.style }}</td>
+        <td>{{ product.purchase_price }}</td>
+        <td>{{ product.sale_price }}</td>
+        <td>{{ product.qty_on_hand }}</td>
+        <td>{{ product.commission_percentage }}</td>
+        <td>
+            <a href="/products/{{ product.id }}/edit/" class="btn">Edit</a>
+            <form action="/products/{{ product.id }}/delete/" method="post" style="display:inline;">
+                <button type="submit">Delete</button>
+            </form>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
