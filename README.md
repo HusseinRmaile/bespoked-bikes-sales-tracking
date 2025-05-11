@@ -22,40 +22,56 @@ Features:
 * Fully separated backend (data layer) and frontend (client web app) within a single monolithic app architecture
 
 Project Structure:
-/static/            →       CSS styles
-/templates/         →       HTML templates
-app.py              →       Frontend client web app
-api_test.py         →       Backend testing during development
-models.py           →       SQLAlchemy models
-crud.py             →       Database access functions
-schemas.py          →       Pydantic schemas
-database.py         →       DB session + connection
-seed_data.py       →       Populate database with demo data
+/static/             →       CSS styles
+
+/templates/          →       HTML templates
+
+app.py               →       Frontend client web app
+
+api_test.py          →       Backend testing during development
+
+models.py            →       SQLAlchemy models
+
+crud.py              →       Database access functions
+
+schemas.py           →       Pydantic schemas
+
+database.py          →       DB session + connection
+
+seed_data.py         →       Populate database with demo data
 
 Setup Instructions:
 
 1. Clone the repo:
+   
    git clone [https://github.com/HusseinRmaile/bespoked-bikes-sales-tracking.git](https://github.com/HusseinRmaile/bespoked-bikes-sales-tracking.git)
+
    cd bespoked-bikes-sales-tracking
 
 2. Install dependencies:
+
    pip install -r requirements.txt
 
 3. Seed the database:
+
    python seed_data.py
 
 4. Run client web app server (on port 8000):
+
    uvicorn app:app --reload
 
 5. Access client:
+
    [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
 
 For Backend API Testing:
 
 1. Run backend web app server (on port 8000):
+
    uvicorn api_test:app --reload
 
 2. Access Swagger API docs:
+
    [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
 
 Additional Notes:
